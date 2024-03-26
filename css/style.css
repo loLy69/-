@@ -25,7 +25,7 @@ html, body {
 }
 
 .header{
-  background-image: url("./файлы/сгупс/пупс.jpg")  ;
+  background-image: url(/файлы/сгупс/пупс.jpg)  ;
   
   background-repeat: no-repeat;
   background-position: center center;
