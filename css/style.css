@@ -369,7 +369,7 @@ html, body {
 
 .about {
   background-color:  #FBF7E7;
-  /* background-image: url('/файлы/icon/college_university_building_school_icon_255800.svg'), width=20%; */
+  /* background-image: url('../файлы/icon/college_university_building_school_icon_255800.svg'), width=20%; */
 
 }
 
@@ -787,7 +787,7 @@ html, body {
   position: relative;
   text-align:justify;
   padding-top: 50px;
-  background: url("/файлы/icon/train_travel_transportation_locomotive_railway_rail_icon_258740.png") 20%  100% no-repeat;
+  background: url("../файлы/icon/train_travel_transportation_locomotive_railway_rail_icon_258740.png") 20%  100% no-repeat;
   
 }
 
@@ -1204,7 +1204,7 @@ html, body {
 
 .event__inner::before {
   content: "";
-  background: url("/файлы/icon/old_train.png") 0 0 / 100% no-repeat;
+  background: url("../файлы/icon/old_train.png") 0 0 / 100% no-repeat;
   width: 90px;
   height: 90px;
 }
@@ -1360,7 +1360,7 @@ html, body {
 /* ============================== BLOG ============================== */
 
 .program {
-  background: url("/файлы/сгупс/пкп.jpg") center / cover no-repeat;
+  background: url("../файлы/сгупс/пкп.jpg") center / cover no-repeat;
 }
 .program::before {
   content: '';
@@ -1620,15 +1620,15 @@ object-position: bottom;
 }
 
 .blog__item--podcast .blog__image-box span::before {
-  background: url("/файлы/icon/cog.svg") 0 0 / 100% no-repeat;
+  background: url("../файлы/icon/cog.svg") 0 0 / 100% no-repeat;
 }
 
 .blog__item--video .blog__image-box span::before {
-  background: url("/файлы/icon/laptop.svg") 0 0 / 100% no-repeat;
+  background: url("../файлы/icon/laptop.svg") 0 0 / 100% no-repeat;
 }
 
 .blog__item--article .blog__image-box span::before {
-  background: url("/файлы/icon/coin-dollar.svg") 0 0 / 100% no-repeat;
+  background: url("../файлы/icon/coin-dollar.svg") 0 0 / 100% no-repeat;
 }
 
 /* ============================== INFO ============================== */
@@ -1754,7 +1754,7 @@ object-position: bottom;
 
 .questions {
   padding-top: 40px;
-  background-image: url("/файлы/сгупс/ночь.jpg");
+  background-image: url("../файлы/сгупс/ночь.jpg");
     background-repeat: no-repeat;
   background-position: center center;
   /* background-attachment: fixed;  */
