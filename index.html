@@ -795,110 +795,59 @@
               <div class="program__heading heading">
                 <h2 class="heading__title">Расписание</h2>
               </div>
-              <div class="timetable">
+               <div>
 
-                <div class="tt__calendar">
-
-                  <style>
-                    #calendar2 {
-                      width: 100%;
-                      font: monospace;
-                      line-height: 1.2em;
-                      font-size: 15px;
-                      text-align: center;
-                    }
-
-                    #calendar2 thead tr:last-child {
-                      font-size: small;
-                      color: rgb(0, 0, 0);
-                    }
-
-                    #calendar2 thead tr:nth-child(1) td:nth-child(2) {
-                      color: rgb(0, 0, 0);
-                    }
-
-                    #calendar2 thead tr:nth-child(1) td:nth-child(1):hover,
-                    #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
-                      cursor: pointer;
-                    }
-
-                    #calendar2 tbody td {
-                      color: rgb(255, 255, 255);
-                    }
-
-                    #calendar2 tbody td:nth-child(n+6),
-                    #calendar2 .holiday {
-                      color: rgb(255, 93, 0);
-                    }
-
-                    #calendar2 tbody td.today {
-                      background: rgb(220, 0, 0);
-                      color: #fff;
-                    }
-                  </style>
-                  <table id="calendar2">
-                    <thead>
-                      <tr>
-                        <td>‹
-                        <td colspan="5">
-                        <td>›
-                      <tr>
-                        <td>Пн
-                        <td>Вт
-                        <td>Ср
-                        <td>Чт
-                        <td>Пт
-                        <td>Сб
-                        <td>Вс
-                    <tbody>
-                  </table>
-                  <script>
-                    function Calendar2(id, year, month) {
-                      var Dlast = new Date(year, month + 1, 0).getDate(),
-                        D = new Date(year, month, Dlast),
-                        DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
-                        DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
-                        calendar = '<tr>',
-                        month = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-                      if (DNfirst != 0) {
-                        for (var i = 1; i < DNfirst; i++) calendar += '<td>';
-                      } else {
-                        for (var i = 0; i < 6; i++) calendar += '<td>';
-                      }
-                      for (var i = 1; i <= Dlast; i++) {
-                        if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-                          calendar += '<td class="today">' + i;
-                        } else {
-                          calendar += '<td>' + i;
-                        }
-                        if (new Date(D.getFullYear(), D.getMonth(), i).getDay() == 0) {
-                          calendar += '<tr>';
+                <img class="tt" src="" alt="" >
+                <script>
+                  var img = document.querySelector('img.tt');
+                  var now = new Date();
+                  var day = now.getDay();
+                  if (day === 0) img.src = "./файлы/расписание/all.jpg";
+                  if (day === 1) img.src = "./файлы/расписание/1.jpg";
+                  if (day === 2) img.src = "./файлы/расписание/2.jpg";
+                  if (day === 3) img.src = "./файлы/расписание/3.jpg";
+                  if (day === 4) img.src = "./файлы/расписание/4.jpg";
+                  if (day === 5) img.src = "./файлы/расписание/5.jpg";
+                  if (day === 6) img.src = "./файлы/расписание/6.jpg";
+                </script>
+                <!-- Code injected by live-server -->
+                <script>
+                  // <![CDATA[  <-- For SVG support
+                  if ('WebSocket' in window) {
+                    (function () {
+                      function refreshCSS() {
+                        var sheets = [].slice.call(document.getElementsByTagName("link"));
+                        var head = document.getElementsByTagName("head")[0];
+                        for (var i = 0; i < sheets.length; ++i) {
+                          var elem = sheets[i];
+                          var parent = elem.parentElement || head;
+                          parent.removeChild(elem);
+                          var rel = elem.rel;
+                          if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                          }
+                          parent.appendChild(elem);
                         }
                       }
-                      for (var i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
-                      document.querySelector('#' + id + ' tbody').innerHTML = calendar;
-                      document.querySelector('#' + id + ' thead td:nth-child(2)').innerHTML = month[D.getMonth()] + ' ' + D.getFullYear();
-                      document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.month = D.getMonth();
-                      document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.year = D.getFullYear();
-                      if (document.querySelectorAll('#' + id + ' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
-                        document.querySelector('#' + id + ' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
+                      var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                      var address = protocol + window.location.host + window.location.pathname + '/ws';
+                      var socket = new WebSocket(address);
+                      socket.onmessage = function (msg) {
+                        if (msg.data == 'reload') window.location.reload();
+                        else if (msg.data == 'refreshcss') refreshCSS();
+                      };
+                      if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                        console.log('Live reload enabled.');
+                        sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
                       }
-                    }
-                    Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
-                    // переключатель минус месяц
-                    document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function () {
-                      Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) - 1);
-                    }
-                    // переключатель плюс месяц
-                    document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
-                      Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
-                    }
-                  </script>
-                </div>
-              </div>
-              <div class="program__border">
-                <img src="./файлы/расписание/2.jpg" alt="расписание" class="program__img">
-
+                    })();
+                  }
+                  else {
+                    console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+                  }
+                  // ]]>
+                </script>
               </div>
             </div>
           </div>
