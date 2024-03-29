@@ -1701,15 +1701,15 @@ object-position: bottom;
 }
 
 .info__mail .info__item-top::before {
-  background: url("../images/icons/chat-icon.svg") 0 0 / 100% no-repeat;
+  background: url("../файлы/icons/chat-icon.svg") 0 0 / 100% no-repeat;
 }
 
 .info__tel .info__item-top::before {
-  background: url("../images/icons/phone-icon.svg") 0 0 / 100% no-repeat;
+  background: url("../файлы/icons/phone-icon.svg") 0 0 / 100% no-repeat;
 }
 
 .info__address .info__item-top::before {
-  background: url("../images/icons/mark-icon.svg") 0 0 / 100% no-repeat;
+  background: url("../файлы/icons/mark-icon.svg") 0 0 / 100% no-repeat;
 }
 
 .info__item-address {
