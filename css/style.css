@@ -1406,6 +1406,8 @@ background-blend-mode: color; */
 .program__heading {
   grid-column-start: 1;
   grid-column-end: 3;
+   color:#fffff0!important;
+  text-shadow: 5px 1px 1px #283528;
 }
 
 .program__border{
